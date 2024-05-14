@@ -18,7 +18,7 @@ Available prebuilt binaries can be viewed [here](https://builds.viaduck.org/preb
 
 ## Build OpenSSL
 In order to build `OpenSSL`, set `BUILD_OPENSSL=ON` along with the branch or 
-tag name, for example `OPENSSL_BUILD_VERSION=OpenSSL_1_1_0g`. 
+tag name, for example `OPENSSL_BUILD_VERSION=1.1.1g`. 
 > you can see the list of the files: https://mirror.viaduck.org/openssl/
 
 ### General Cross Compile
@@ -43,7 +43,7 @@ add <URL> external/openssl-cmake`
 
 ```
 set(BUILD_OPENSSL ON)
-set(OPENSSL_BUILD_VERSION OpenSSL_1_1_0g)
+set(OPENSSL_BUILD_VERSION 1.1.1g)
 add_subdirectory(${openssl_dir}/openssl-cmake ${CMAKE_BINARY_DIR}/openssl)
 target_link_libraries(${target_name} PRIVATE
   crypto
