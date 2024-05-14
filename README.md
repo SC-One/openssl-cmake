@@ -39,6 +39,18 @@ add <URL> external/openssl-cmake`
 3. In your `CMakeLists.txt` include the directory using 
 `add_subdirectory(external/openssl-cmake)`
 4. Link against `ssl` and `crypto` targets, which will also include the headers
+### complete example build from source
+
+```
+set(BUILD_OPENSSL ON)
+set(OPENSSL_BUILD_VERSION OpenSSL_1_1_0g)
+add_subdirectory(${openssl_dir}/openssl-cmake ${CMAKE_BINARY_DIR}/openssl)
+target_link_libraries(${target_name} PRIVATE
+  crypto
+  ssl
+)
+```
+
 
 ## Licensing
 These scripts, unless otherwise stated, are subject to the MIT license.
